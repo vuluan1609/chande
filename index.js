@@ -1,16 +1,19 @@
-require('dotenv').config();
-const http = require('http');
-
-// Khởi tạo HTTP server ngay lập tức để Render nhận diện port
+const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 3000;
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Bot is alive and running 24/7!');
+
+// Tạo route đơn giản để Render và UptimeRobot ping vào giữ kết nối 24/7
+app.get('/', (req, res) => {
+    res.send('Bot is alive and running 24/7!');
 });
 
-server.listen(PORT, () => {
-    console.log(`🌐 HTTP Server đang lắng nghe trên cổng ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server đang lắng nghe trên cổng ${PORT}`);
 });
+
+require('dotenv').config();
+
+// --- Phần code Discord Bot và MongoDB giữ nguyên bên dưới ---
 
 // --- Phần code Discord Bot và MongoDB giữ nguyên bên dưới ---
 const fs = require('fs');
