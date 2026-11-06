@@ -4,14 +4,16 @@ module.exports = {
     async execute(message, args) {
         const subCommand = args[0]?.toLowerCase();
 
-        if (subCommand === 'kinhte' || subCommand === 'money') {
+        if (subCommand === 'kinhte' || subCommand === 'money' || subCommand === 'shop') {
             return message.reply(
-                `💰 **HƯỚNG DẪN: KINH TẾ & TÀI CHÍNH** 💰\n` +
+                `💰 **HƯỚNG DẪN: KINH TẾ, TÀI CHÍNH & SHOP** 💰\n` +
                 `• \`!work\` - Đi làm kiếm xu (hồi chiêu 1 tiếng).\n` +
                 `• \`!me\` (hoặc \`!profile\`, \`!tt\`) - Xem hồ sơ, ví, ngân hàng.\n` +
                 `• \`!vi\` - Xem nhanh số dư ví.\n` +
                 `• \`!bank\` - Xem nhanh số dư ngân hàng.\n` +
-                `• \`!top\` - Bảng xếp hạng đại gia.`
+                `• \`!top\` - Bảng xếp hạng đại gia.\n` +
+                `• \`!shop\` - Mở cửa hàng vật phẩm.\n` +
+                `• \`!buy <id>\` - Mua vật phẩm từ shop.`
             );
         }
 
@@ -27,7 +29,7 @@ module.exports = {
         return message.reply(
             `📖 **HỆ THỐNG TRỢ GIÚP BOT CHAN ĐÊ** 📖\n` +
             `Gõ \`!help <danh_mục>\` để xem chi tiết:\n\n` +
-            `🔹 \`!help kinhte\` - Kinh tế, công việc, ví, ngân hàng, top.\n` +
+            `🔹 \`!help kinhte\` - Kinh tế, công việc, ví, ngân hàng, top, shop.\n` +
             `🔹 \`!help game\` - Minigame Tài Xỉu & Soi cầu.`
         );
     }
