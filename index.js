@@ -1,3 +1,5 @@
+require('dotenv').config(); // <-- Đưa cái này lên dòng số 1 đầu tiên!
+
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,11 +13,7 @@ app.listen(PORT, () => {
     console.log(`Server đang lắng nghe trên cổng ${PORT}`);
 });
 
-require('dotenv').config();
-
-// --- Phần code Discord Bot và MongoDB giữ nguyên bên dưới ---
-
-// --- Phần code Discord Bot và MongoDB giữ nguyên bên dưới ---
+// --- Phần code Discord Bot và MongoDB bên dưới ---
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
